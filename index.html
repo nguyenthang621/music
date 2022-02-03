@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="./img/music-note.png" type="image/x-icon" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play music</title>
+</head>
+<body>
+<div class="player">
+    <!-- dashboard -->
+    <div class="dashboard">
+        <!-- header -->
+       <div class="header">
+           <p>Now playing</p>
+           <h2 class="nameSong">first song</h2>
+           <div class="btn-add">
+            <i class='bx bx-plus'></i>
+           </div>
+       </div>
+       <!-- cd -->
+       <div class="cd">
+        <img src="./img/img1.jpg" alt="">
+       </div>
+
+       <!-- Control -->
+
+       <div class="control">
+           <div class="btn-repeat">
+        <i class='bx bx-repeat'></i>
+           </div>
+           <div class="btn-pre">
+            <i class='bx bx-skip-previous' ></i>
+           </div>
+           <div class="btn-play">
+            <i class='bx bx-play' ></i>
+            <i class='bx bx-pause hide'></i>
+           </div>
+           <div class="btn-next">
+            <i class='bx bx-skip-next' ></i>
+           </div>
+           <div title="random song" class="btn-random">
+            <i  class='bx bx-transfer-alt' ></i>
+           </div>
+       </div>
+
+<!-- audio -->
+       <div class="audio">
+           <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+           <audio id="audio" src=""></audio>
+       </div>
+
+    </div>
+<!-- end dashboard -->
+
+<!-- play list -->
+<div class="playList">
+
+</div>
+<!--  -->
+
+</div>
+    <script src="app.js"></script>
+</body>
+</html>

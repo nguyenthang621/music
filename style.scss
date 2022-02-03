@@ -1,0 +1,214 @@
+$color-btn:rgb(251, 114, 114);
+@mixin size($width,$height:$width) {
+    width:$width;
+    height:$height;
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body{
+    background-color: rgba(235, 235, 235, 0.877)
+
+}
+.player{
+    background-color: #fff;
+    & .dashboard{
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        // min-height: 480px;
+        background-color: #fff;
+        & .header{
+            margin-bottom: 20px;
+            position: relative;
+            padding-top: 10px;
+            text-align: center;
+            & p{
+                color: $color-btn;
+                font-size:12px;
+                font-weight: bold;
+            }
+            & h2{
+                font-weight:bold;
+                font-size: 24px;
+            }
+            & .btn-add{
+                position:absolute;
+                top: 8px;
+                right: 8px;
+               & i{
+                   font-size:36px;
+                   color: $color-btn;
+               }
+            }
+        }
+
+
+        & .cd{
+            @include size(300px);
+            border-radius: 50%;
+            overflow: hidden;
+            border-right: 3px solid $color-btn;
+            // border-top: 3px solid $color-btn;
+            border-left: 3px solid rgb(71, 247, 203);
+            // border-bottom: 3px solid rgb(71, 247, 203);
+            margin: 0 auto;
+            // margin-top: 20px;
+            & img{
+                object-fit: contain;
+                @include size(100%);
+                object-fit: cover;
+            }
+        }
+
+
+        & .control{
+            margin:20px 0 ;
+            
+            display: flex;
+            color: rgb(98, 98, 98);
+            justify-content: space-evenly;
+            align-items: center;
+
+            & i{
+                font-size:28px;
+            }
+
+            & .btn-play{
+                // padding: 15px;
+                @include size(60px);
+                background-color: rgb(253, 61, 61);
+                border-radius: 50%;
+                color: white;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 0px 10px rgb(255, 124, 124);
+
+                & i{
+                    font-size:40px;
+                }
+                & i.bx-pause{
+                    // display:none;
+                }
+            }
+
+        
+        }
+
+        & .audio{
+            padding: 0 20px 20px;
+            & .progress {
+                width: 100%;
+                -webkit-appearance: none;
+                height: 8px;
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: 0.2s;
+                transition: opacity 0.2s;
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    // appearance: none;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    box-shadow: 0px 0px 10px rgb(255, 53, 53);
+                    background-color: rgb(255, 51, 51);
+                    cursor: pointer;
+                  }
+              }
+
+        }
+          
+
+    }
+
+
+    & .playList{
+        position: absolute;
+        top: 520px;
+        width:100%;
+        // &:before {
+        //     z-index: 1;
+        //     content:"";
+        //     position:absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: rgba(230, 230, 230, 0.315);
+
+        // }
+
+         & .song{
+            //  box-shadow: 2px 2px 5px rgb(185, 185, 185);
+            background-color: #fff;
+            margin:8px 5px 5px 5px;
+            display:flex;
+            position: relative;
+            padding: 10px 15px;
+            border-radius: 5px;
+            opacity: 0.8;
+            & .img-song{
+                // position: absolute;
+                @include size(45px);
+                border-radius: 50%;
+                overflow: hidden;
+                border: 1px solid rgba(204, 204, 204, 0.664);
+                & img{
+                    @include size(100%);
+                    object-fit:cover;
+                }
+            }
+
+            & .infor{
+                margin: 0 20px 0 20px;
+                 & .title{
+                    font-size:20px;
+                    font-weight: bold;
+                 }
+                 & .author{
+                    font-size: 14px;
+                    color: rgb(141, 140, 140);
+                 }
+            }
+
+            & .option{
+                color: #000 !important;
+                position:absolute;
+                top:50%;
+                transform: translateY(-50%);
+                font-size: 30px;
+                right: 12px;
+
+                & i{
+                    opacity: 0.6;
+                }
+                
+            }
+         }
+
+
+    }
+}
+
+.hide{
+    display:none;
+}
+.active{
+color: red;
+}
+.activeSong{
+    color:rgb(255, 50, 50);
+    opacity: 1 !important;
+    box-shadow: 2px 2px 10px rgb(185, 185, 185);
+    
+}
